@@ -1,0 +1,16 @@
+<template name="cards">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Cards</h1>
+    {{/contentFor}}
+    {{#ionView}}
+        {{#ionContent scroll="false"}}
+            <div id="deck">
+                <ul class="stack">
+                    {{#each users}}
+                        <li>{{>_card}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/ionContent}}
+    {{/ionView}}
+</template>

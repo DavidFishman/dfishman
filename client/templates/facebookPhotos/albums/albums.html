@@ -1,0 +1,18 @@
+<template name="albums">
+    {{>backButton path="profile"}}{{!path needs to be set in routes.js as well - bug with Meteoric}}
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Albums</h1>
+    {{/contentFor}}
+    {{#ionView}}
+        {{#ionContent}}
+            {{#ionList}}
+                <a href="{{pathFor 'gallery' _albumId=''}}">
+                    {{>selectedImages title="Selected Photos"}}
+                </a>
+                {{#each albums}}
+                    {{> _albumPreview}}
+                {{/each}}
+            {{/ionList}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

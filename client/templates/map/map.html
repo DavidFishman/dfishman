@@ -1,0 +1,10 @@
+<template name="map">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Map</h1>
+    {{/contentFor}}
+    {{#ionView}}
+        {{#ionContent}}
+            {{> googleMap name="exampleMap" options=exampleMapOptions}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

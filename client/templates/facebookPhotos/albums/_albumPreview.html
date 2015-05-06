@@ -1,0 +1,7 @@
+<template name="_albumPreview">
+    <a class="item item-thumbnail-left item-icon-right" href="{{pathFor 'gallery' _albumId=this.id}}">
+        <img src="{{imageUrl}}">
+        <h2>{{name}}</h2>
+        {{> ionIcon icon="ios-arrow-right"}}
+    </a>
+</template>

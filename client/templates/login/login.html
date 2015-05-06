@@ -1,0 +1,17 @@
+<template name="login">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Login</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <div class="text-center">
+                <h2>Welcome to {{globalApplicationName}}!</h2>
+
+                <h3>Please connect with Facebook</h3>
+                <br>
+                <button id="facebook-login" class="button-full button button-positive">Login with Facebook</button>
+            </div>
+        {{/ionContent}}
+    {{/ionView}}
+</template>

@@ -1,0 +1,29 @@
+<template name="gallery">
+    {{_initNonReact}}{{!This is hack to deal with loading conflicts since FB loads ASYNC}}
+    {{>backButton path="albums"}}{{!path needs to be set in routes.js as well - bug with Meteoric}}
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Select Photos {{photosSelected}}</h1>
+    {{/contentFor}}
+    {{#contentFor "headerButtonRight"}}
+        <!--<button class="button">Edit</button>-->
+        {{>ionNavBackButton class="button" text="Done" path="profile"}}
+    {{/contentFor}}
+    {{#ionView}}
+        {{#ionContent}}
+            {{#ionList}}
+                {{#if pictures}}
+                    {{#each pictures}}
+                        {{> _galleryPicture}}
+                    {{/each}}
+                {{else}}
+                    No Photos in this Album!
+                {{/if}}
+            {{/ionList}}
+            {{#if hasNext}}
+                <button class="loadNext button button-block button-balanced">
+                    Load More...
+                </button>
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

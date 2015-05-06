@@ -1,0 +1,24 @@
+<template name="selectedImages">
+        <span class="item preview-gallery item-icon-right">
+            <div class="row">
+                {{#if currentUser.profile.facebookImageIds}}
+                    <h2>{{title}}</h2>
+                {{else}}
+                    <h2>No Profile Images Selected!</h2>
+                {{/if}}
+            </div>
+            <div class="row">
+                <div class="col col-90">
+                    {{#if currentUser}}
+                        {{#each currentUser.selectedImageUrls size='album'}}
+                            <div class="preview"
+                                 style="background-image: url('{{this}}')"></div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+                {{> ionIcon icon="ios-arrow-right"}}
+
+            </div>
+
+        </span>
+</template>
